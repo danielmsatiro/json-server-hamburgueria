@@ -6,6 +6,76 @@
       "name": "Kenzinho",
       "age": 38,
       "id": 1
+    },
+    {
+      "email": "monica@yahoo.com.br",
+      "password": "$2a$10$tvYWNtwP/3WRcoZOPcWrxek7P7z8MGNRWzPVF2bBG0.yDfmjPXAWa",
+      "age": 14,
+      "new_property": "new_property",
+      "id": 2
+    },
+    {
+      "email": "pedro@yahoo.com.br",
+      "password": "$2a$10$dCmprNcj1/l988FpO4GiE.HwzeGThVPsHZCn69hl5rp72/oRW07vy",
+      "id": 3
+    }
+  ],
+  "cars": [
+    {
+      "Marca": "Renault",
+      "Modelo": "Sandero 1.0 xl",
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "Marca": "Renault",
+      "Modelo": "Sandero 1.0",
+      "userId": 2,
+      "id": 2
+    },
+    {
+      "Marca": "Toyota",
+      "Modelo": "Etios",
+      "userId": 2,
+      "id": 3
+    }
+  ],
+  "comments": [
+    {
+      "text": "Acidente de transito com quem não tem seguro é foda",
+      "date": "19-03-2020",
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "text": "Hoje eu vou pescar",
+      "date": "19-03-2021",
+      "userId": 2,
+      "id": 2
+    },
+    {
+      "text": "Amanhã eu vou pescar",
+      "date": "19-03-2021",
+      "userId": 2,
+      "id": 3
+    },
+    {
+      "text": "Amanhã eu vou pescar",
+      "date": "19-03-2021",
+      "userId": 2,
+      "id": 4
+    },
+    {
+      "text": "Amanhã eu vou pescar",
+      "date": "19-03-2021",
+      "userId": 2,
+      "id": 5
+    },
+    {
+      "text": "Amanhã eu vou pescar",
+      "date": "19-03-2021",
+      "userId": 2,
+      "id": 6
     }
   ]
 }
