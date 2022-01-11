@@ -19,10 +19,7 @@ Este é o backend de CarLovers - Um hub dos que gostam de carros em podem cadast
 A API tem um total de 12 endpoints, sendo em volta principalmente do usuário (CarLover) - podendo cadastrar seu perfil, veículos que possui e registrar comentários na rede para todos os usuários.
 <br/>
 
-<!-- O JSON para utilizar no Insomnia é este aqui -> https://kenziehub.s3.amazonaws.com/requests_kenziehub.json
-Para importar o JSON no Insomnia é só clicar na palavra "Insomnia" no canto superior esquerdo. Nesse dropdown é só clicar em "Import / Export > Import Data > From Url" e colocar o link acima :v:
-
-O url base da API é https://kenziehub.herokuapp.com -->
+O url base da API é https://git.heroku.com/car-lovers.git
 
 ## Rotas que não precisam de autenticação
 
