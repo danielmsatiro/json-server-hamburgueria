@@ -50,7 +50,7 @@ Podemos utilizar os query params para mudar a lista. Com o parâmetro userId, po
 
 `GET /comments?userId=2 - FORMATO DA RESPOSTA - STATUS 200`
 
-````json
+```json
 [
   {
     "text": "Amanhã eu vou pescar",
@@ -83,6 +83,7 @@ Podemos utilizar os query params para mudar a lista. Com o parâmetro userId, po
     "id": 6
   }
 ]
+```
 
 <h2 align ='center'> Criação de usuário </h2>
 
@@ -90,12 +91,12 @@ Podemos utilizar os query params para mudar a lista. Com o parâmetro userId, po
 
 ```json
 {
-      "email": "monica@yahoo.com.br",
-      "password": "123456",
-      "name": "Monica",
-      "age": 35
-    }
-````
+  "email": "monica@yahoo.com.br",
+  "password": "123456",
+  "name": "Monica",
+  "age": 35
+}
+```
 
 Caso dê tudo certo, a resposta será assim:
 
