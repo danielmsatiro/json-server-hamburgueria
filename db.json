@@ -1,81 +1,73 @@
 {
   "users": [
     {
-      "email": "kenzinho@mail.com",
+      "email": "kenzinho@gmail.com",
       "password": "$2a$10$YQiiz0ANVwIgpOjYXPxc0O9H2XeX3m8OoY1xk7OGgxTnOJnsZU7FO",
       "name": "Kenzinho",
-      "age": 38,
       "id": 1
     },
     {
-      "email": "monica@yahoo.com.br",
-      "password": "$2a$10$tvYWNtwP/3WRcoZOPcWrxek7P7z8MGNRWzPVF2bBG0.yDfmjPXAWa",
-      "age": 14,
-      "new_property": "new_property",
+      "email": "mateus_satiro@yahoo.com",
+      "password": "$2a$10$NNvCCqVgsB2Myzrrmy/GwOkqPLoTbWJU5J7pkfpJNrpec7KWWI7sO",
+      "name": "Daniel",
       "id": 2
     },
     {
-      "email": "pedro@yahoo.com.br",
-      "password": "$2a$10$dCmprNcj1/l988FpO4GiE.HwzeGThVPsHZCn69hl5rp72/oRW07vy",
-      "id": 3
-    }
-  ],
-  "cars": [
-    {
-      "Marca": "Renault",
-      "Modelo": "Sandero 1.0 xl",
-      "userId": 1,
-      "id": 1
-    },
-    {
-      "Marca": "Renault",
-      "Modelo": "Sandero 1.0",
-      "userId": 2,
-      "id": 2
-    },
-    {
-      "Marca": "Toyota",
-      "Modelo": "Etios",
-      "userId": 2,
-      "id": 3
-    }
-  ],
-  "comments": [
-    {
-      "text": "Acidente de transito com quem não tem seguro é foda",
-      "date": "19-03-2020",
-      "userId": 1,
-      "id": 1
-    },
-    {
-      "text": "Hoje eu vou pescar",
-      "date": "19-03-2021",
-      "userId": 2,
-      "id": 2
-    },
-    {
-      "text": "Amanhã eu vou pescar",
-      "date": "19-03-2021",
-      "userId": 2,
+      "email": "monica@yahoo.com",
+      "password": "$2a$10$POCOK2gdjZuK3dDHPX6USejk1zAUxCp3gXoxzAHjMtpiz07pwPycC",
+      "name": "monica",
       "id": 3
     },
     {
-      "text": "Amanhã eu vou pescar",
-      "date": "19-03-2021",
-      "userId": 2,
+      "email": "mateus_satiro@yahoo.com.br",
+      "password": "$2a$10$N/Gs/cUeeo2TZj7lzSqH4OMZ07lMKahtQFPMB5XIdYFCVrmnSYjke",
+      "name": "Daniel",
       "id": 4
+    }
+  ],
+  "cart": [],
+  "products": [
+    {
+      "id": 1,
+      "name": "Hamburguer",
+      "category": "Sanduíches",
+      "price": 14,
+      "img": "https://i.ibb.co/fpVHnZL/hamburguer.png"
     },
     {
-      "text": "Amanhã eu vou pescar",
-      "date": "19-03-2021",
-      "userId": 2,
-      "id": 5
+      "id": 2,
+      "name": "X-Burguer",
+      "category": "Sanduíches",
+      "price": 16,
+      "img": "https://i.ibb.co/djbw6LV/x-burgue.png"
     },
     {
-      "text": "Amanhã eu vou pescar",
-      "date": "19-03-2021",
-      "userId": 2,
-      "id": 6
+      "id": 3,
+      "name": "Big Kenzie",
+      "category": "Sanduíches",
+      "price": 18,
+      "img": "https://i.ibb.co/FYBKCwn/big-kenzie.png"
+    },
+    {
+      "id": 4,
+      "name": "Fanta Guaraná",
+      "category": "Bebidas",
+      "price": 5,
+      "img": "https://i.ibb.co/cCjqmPM/fanta-guarana.png"
+    },
+    {
+      "id": 5,
+      "name": "Coca Cola",
+      "category": "Bebidas",
+      "price": 7,
+      "img": "https://i.ibb.co/fxCGP7k/coca-cola.png"
+    },
+    {
+      "id": 6,
+      "name": "McShake Ovomaltine",
+      "category": "Bebidas",
+      "price": 10,
+      "img": "https://i.ibb.co/QNb3DJJ/milkshake-ovomaltine.png"
     }
   ]
 }
