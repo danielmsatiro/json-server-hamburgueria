@@ -3,11 +3,11 @@
 </h1>
 
 <h1 align="center">
-  CarLovers - API
+  Hamburgueria - API
 </h1>
 
 <p align = "center">
-Este é o backend de CarLovers - Um hub dos que gostam de carros em podem cadastrar seus veículos e participar de uma rede postando seus comentários sobre assuntos relacionados.
+Este é o backend de Hamburgueria.
 </p>
 
 <p align="center">
@@ -16,74 +16,68 @@ Este é o backend de CarLovers - Um hub dos que gostam de carros em podem cadast
 
 ## **Endpoints**
 
-A API tem um total de 12 endpoints, sendo em volta principalmente do usuário (CarLover) - podendo cadastrar seu perfil, veículos que possui e registrar comentários na rede para todos os usuários.
-<br/>
-
-O url base da API é https://git.heroku.com/car-lovers.git
+O url base da API é https://hamburgueria-dmsatiro.herokuapp.com/
 
 ## Rotas que não precisam de autenticação
 
-<h2 align ='center'> Listando comentários </h2>
+<h2 align ='center'> Listando produtos </h2>
 
-Aqui todos é possível visualizar todos os comentários feito por todos os usuários sem estar logado.
-
-`GET /comments - FORMATO DA RESPOSTA - STATUS 200`
+`GET /products - FORMATO DA RESPOSTA - STATUS 200`
 
 ```json
-[
+[[
   {
-    "text": "Acidente de transito com quem não tem seguro é foda",
-    "date": "19-03-2020",
-    "userId": 1,
-    "id": 1
+    "id": 1,
+    "name": "Hamburguer",
+    "category": "Sanduíches",
+    "price": 14,
+    "img": "https://i.ibb.co/fpVHnZL/hamburguer.png"
   },
   {
-    "text": "Hoje eu vou pescar",
-    "date": "19-03-2021",
-    "userId": 2,
-    "id": 2
+    "id": 2,
+    "name": "X-Burguer",
+    "category": "Sanduíches",
+    "price": 16,
+    "img": "https://i.ibb.co/djbw6LV/x-burgue.png"
+  },
+  {
+    "id": 3,
+    "name": "Big Kenzie",
+    "category": "Sanduíches",
+    "price": 18,
+    "img": "https://i.ibb.co/FYBKCwn/big-kenzie.png"
+  },
+  {
+    "id": 4,
+    "name": "Fanta Guaraná",
+    "category": "Bebidas",
+    "price": 5,
+    "img": "https://i.ibb.co/cCjqmPM/fanta-guarana.png"
+  },
+  {
+    "id": 5,
+    "name": "Coca Cola",
+    "category": "Bebidas",
+    "price": 7,
+    "img": "https://i.ibb.co/fxCGP7k/coca-cola.png"
+  },
+  {
+    "id": 6,
+    "name": "McShake Ovomaltine",
+    "category": "Bebidas",
+    "price": 10,
+    "img": "https://i.ibb.co/QNb3DJJ/milkshake-ovomaltine.png"
   }
 ]
 ```
 
-Podemos utilizar os query params para mudar a lista. Com o parâmetro userId, podemos filtrar por usuário.
+Podemos utilizar os query params para filtrar a lista. Pode-se filtrar por nome ou categoria, por exemplo.
 
-`GET /comments?userId=2 - FORMATO DA RESPOSTA - STATUS 200`
+`GET /products?name=Hamburguer - FORMATO DA RESPOSTA - STATUS 200`
 
-```json
-[
-  {
-    "text": "Amanhã eu vou pescar",
-    "date": "19-03-2021",
-    "userId": 2,
-    "id": 2
-  },
-  {
-    "text": "Amanhã eu vou pescar",
-    "date": "19-03-2021",
-    "userId": 2,
-    "id": 3
-  },
-  {
-    "text": "Amanhã eu vou pescar",
-    "date": "19-03-2021",
-    "userId": 2,
-    "id": 4
-  },
-  {
-    "text": "Amanhã eu vou pescar",
-    "date": "19-03-2021",
-    "userId": 2,
-    "id": 5
-  },
-  {
-    "text": "Amanhã eu vou pescar",
-    "date": "19-03-2021",
-    "userId": 2,
-    "id": 6
-  }
-]
-```
+Pode-se utilizar uma correspondência aproximada da busca com "like"
+
+`GET /products?name_like=hamb - FORMATO DA RESPOSTA - STATUS 200`
 
 <h2 align ='center'> Criação de usuário </h2>
 
@@ -91,10 +85,9 @@ Podemos utilizar os query params para mudar a lista. Com o parâmetro userId, po
 
 ```json
 {
-  "email": "monica@yahoo.com.br",
-  "password": "123456",
   "name": "Monica",
-  "age": 35
+  "email": "monica@yahoo.com.br",
+  "password": "123456"
 }
 ```
 
@@ -108,7 +101,6 @@ Caso dê tudo certo, a resposta será assim:
   "user": {
     "email": "monica@yahoo.com.br",
     "name": "Monica",
-    "age": 35,
     "id": 2
   }
 }
@@ -170,9 +162,7 @@ Caso dê tudo certo, a resposta será assim:
   "user": {
     "email": "monica@yahoo.com.br",
     "name": "Monica",
-    "age": 4,
-    "id": 2,
-    "userId": 2
+    "id": 2
   }
 }
 ```
@@ -184,84 +174,46 @@ Rotas que necessitam de autorização deve ser informado no cabeçalho da requis
 > Authorization: Bearer {token}
 > Após o usuário estar logado, ele deve conseguir cadastrar cometários é os veículos que possui.
 
-<h2 align ='center'> Criar comentários </h2>
+<h2 align ='center'> Adicionar produtos ao carrinho e fazer alerações</h2>
 
-`POST /comments - FORMATO DA REQUISIÇÃO`
-
-```json
-{
-  "text": "Amanhã eu vou pescar",
-  "date": "19-03-2021",
-  "userId": 2
-}
-```
-
-1. O campo - "text" recebe os comentário do usuário sobre o tema relacionado a carros.
-2. É nessário ifnormar o campo userId, pois somente o usuário que criou terá acesso para fazer alterções:
-
-`PATCH /comments/:comment_id - FORMATO DA REQUISIÇÃO`
+`POST /cart - FORMATO DA REQUISIÇÃO`
 
 ```json
 {
-  "text": "Hoje eu vou pescar",
-  "date": "19-03-2021",
-  "userId": 2
+  "name": "Hamburguer",
+  "category": "Sanduíches",
+  "price": 14,
+  "img": "https://i.ibb.co/fpVHnZL/hamburguer.png",
+  "Quantidade": 1,
+  "userId": "4"
 }
 ```
 
-3. Caso não informe o userId receberá o seguinte erro:
+1. No momento da criação a quantidade sempre deverá ser 1 caso não exista um produto com o mesmo nome.
+2. É necessário informar o campo userId, pois somente o usuário que criou terá acesso para fazer alterações:
 
-Ou seja, você pode apenas dar update em quanto você avançou nas tecnologias que já está no seu perfil. Utilizando este endpoint:
+`PATCH /cart/:product_id - FORMATO DA REQUISIÇÃO`
+
+```json
+{
+  "Quantidade": 2,
+  "userId": "4"
+}
+```
+
+3. Caso não informe o userId tanto na criação quanto na alteração respectivamente os seguintes erros:
 
 ```json
 "Private resource creation: request body must have a reference to the owner id"
 ```
 
-Também é possível deletar um commentário, utilizando este endpoint, desde que seja um comentário do próprio usuário:
-
-`DELETE /comments/:comment_id`
-
-```
-Não é necessário um corpo da requisição.
-```
-
-<h2 align ='center'> Cadastrar carros </h2>
-
-Da mesma forma de criar comentários, conseguimos cadastrar veículos, dessa forma:
-
-`POST /cars - FORMATO DA REQUISIÇÃO`
-
 ```json
-{
-  "Marca": "Toyota",
-  "Modelo": "Etios",
-  "userId": 2
-}
+"Cannot read property 'userId' of undefined"
 ```
 
-Conseguimos atualizar a Marca e o Modelo utilizando este endpoint:
+Também é possível excluir utilizando este endpoint, desde que seja um produto do cart do próprio usuário:
 
-`PATCH /cars/:car_id - FORMATO DA REQUISIÇÃO`
-
-```json
-{
-  "Marca": "Renault",
-  "Modelo": "Sandero",
-  "userId": 2
-}
-```
-
-Também é possível deletar um trabalho do seu perfil, utilizando este endpoint:
-
-`DELETE /cars/:car_id`
-
-```
-Não é necessário um corpo da requisição.
-```
-
-A busca de todos os veículos cadastrados só pode ser consultada pelo próprio usuário. O formato da requisição é:
-
-`DELETE /cars`
+`DELETE /cart/:product_id`
 
 ```
 Não é necessário um corpo da requisição.
@@ -269,7 +221,7 @@ Não é necessário um corpo da requisição.
 
 <h2 align ='center'> Atualizando os dados do perfil </h2>
 
-Assim como os endpoints de Comments e Cars, nesse precisamos estar logados, com o token no cabeçalho da requisição. Estes endpoints são para atualizar seus dados do usuário como senha e mais informações.
+Precisamos estar logados, com o token no cabeçalho da requisição. Estes endpoints são para atualizar seus dados do usuário como senha e mais informações.
 
 Endpoint para atualizar um dado específico do usuário. É possível fazer alteração por outro email válido que não esteja sendo utilizado ou da senha:
 
@@ -277,7 +229,7 @@ Endpoint para atualizar um dado específico do usuário. É possível fazer alte
 
 ```json
 {
-  "age": 15
+  "password": 15
 }
 ```
 
